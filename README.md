@@ -32,7 +32,7 @@ To Accomplish this task we need:
 2. A count of note entries by author, by the hour in time that they were created
 3. The counted data grouped and pivoted to fit the report layout requirement
 
-> Three steps, seems simple enough
+_Three steps, seems simple enough_
 
 ### Initiate the time frame, title, and report header names
 
@@ -109,5 +109,20 @@ Roll the consolidated and pivoted data back into and array or hashs, splitting a
 ```
 
 ### See it in action
-Review the simple example class, to see how it all fits together.# group-n-pivot-activerecord-data
-A simple example of a way to group and pivot rails activerecord data results, for a report.
+Review the simple [example class](https://github.com/tinabme/group-n-pivot-activerecord-data/blob/master/note_tracking.rb), to see how it all fits together.
+
+### usage
+_This class assumes a rails app is setup with the `Note` ActiveRecord class and the `notes` table contains a minimum of the above mentioned fields, on a mysql db (other db may have different query functions)_
+
+From the rails console:
+initiate a new class instance 
+``` x = Reports::NoteTracking.new(time_since: 3.days.ago)```
+get the results, in a csv format
+``` x.to_csv ```
+
+
+
+
+
+
+
